@@ -16,7 +16,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -89,13 +89,27 @@
                         <img src="assets/foto.png" alt="Nicolás Díaz Guerrero — Diseñador UX/UI" class="hero__profile-img">
                     </div>
                     <div class="hero__float-card hero__float-card--1" aria-hidden="true">
-                        <span class="hero__float-icon">🎨</span> Figma & Design
+                        <svg class="hero__float-logo" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 4.5a3 3 0 1 1 6 0v4.5H3V4.5Z" fill="#F24E1E"/>
+                            <path d="M3 10.5a3 3 0 0 1 3-3v6a3 3 0 0 1-3-3Z" fill="#A259FF"/>
+                            <path d="M3 15a3 3 0 0 1 3 3v-3H3Z" fill="#1ABCFE"/>
+                            <path d="M6 10.5a3 3 0 1 1 6 0V15H6v-4.5Z" fill="#0ACF83"/>
+                            <path d="M6 4.5a3 3 0 0 1 3-3 3 3 0 0 1 3 3v3H6v-3.5Z" fill="#FF7262"/>
+                        </svg>
+                        Figma & Design
                     </div>
                     <div class="hero__float-card hero__float-card--2" aria-hidden="true">
-                        <span class="hero__float-icon">⚡</span> React & Flutter
+                        <svg class="hero__float-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.314 0L2.3 12l3.522 3.522L21.36 0H14.314zM21.36 12l-7.046 7.046-3.523-3.522L17.838 12h3.522zM14.314 24l7.046-7.046H17.84L10.79 24h3.523z" fill="#02569B"/>
+                            <path d="M14.314 24l3.523-3.523-3.523-3.523H10.79L14.314 24z" fill="#0175C2"/>
+                        </svg>
+                        React & Flutter
                     </div>
                     <div class="hero__float-card hero__float-card--3" aria-hidden="true">
-                        <span class="hero__float-icon">🎮</span> Unity & XR
+                        <svg class="hero__float-logo" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 0L24.8 60v120L128 240l103.2-60V60L128 0zm0 30.6l73.4 42.7-73.4 42.7-73.4-42.7L128 30.6zM50.6 88.4l62.4 36.3v72.5L50.6 161V88.4zm154.8 72.6l-62.4 36.3v-72.5l62.4-36.3v72.5z" fill="#1e1b4b"/>
+                        </svg>
+                        Unity & XR
                     </div>
                 </div>
             </div>
@@ -210,7 +224,11 @@
                     <!-- Lili Quest -->
                     <div class="project-card glass glass--interactive reveal reveal--delay-1" data-project="lili-quest">
                         <div class="project-card__image-wrapper">
-                            <img src="assets/lili1.png" alt="Lili Quest — Experiencia interactiva Museo Lilí" class="project-card__image">
+                            <div class="project-card__slides">
+                                <img src="assets/lili1.png" alt="Lili Quest — Imagen 1" class="project-card__slide active">
+                                <img src="assets/lili2.png" alt="Lili Quest — Imagen 2" class="project-card__slide">
+                                <img src="assets/lili3.png" alt="Lili Quest — Imagen 3" class="project-card__slide">
+                            </div>
                             <div class="project-card__overlay">
                                 <span class="project-card__overlay-text">Ver Proyecto →</span>
                             </div>
@@ -233,7 +251,11 @@
                     <!-- Ubikasa -->
                     <div class="project-card glass glass--interactive reveal reveal--delay-2" data-project="ubikasa">
                         <div class="project-card__image-wrapper">
-                            <img src="assets/ubi1.png" alt="Ubikasa — Plataforma de arriendos" class="project-card__image">
+                            <div class="project-card__slides">
+                                <img src="assets/ubi1.png" alt="Ubikasa — Imagen 1" class="project-card__slide active">
+                                <img src="assets/ubi2.png" alt="Ubikasa — Imagen 2" class="project-card__slide">
+                                <img src="assets/ubi3.png" alt="Ubikasa — Imagen 3" class="project-card__slide">
+                            </div>
                             <div class="project-card__overlay">
                                 <span class="project-card__overlay-text">Ver Proyecto →</span>
                             </div>
@@ -256,7 +278,9 @@
                     <!-- 4P Brands -->
                     <div class="project-card glass glass--interactive reveal reveal--delay-3" data-project="4p-brands">
                         <div class="project-card__image-wrapper">
-                            <video src="assets/VIDEO 4P 1.mp4" autoplay loop muted playsinline class="project-card__image"></video>
+                            <div class="project-card__slides">
+                                <img src="assets/4P.jpeg" alt="4P Brands — Imagen 1" class="project-card__slide active">
+                            </div>
                             <div class="project-card__overlay">
                                 <span class="project-card__overlay-text">Ver Proyecto →</span>
                             </div>

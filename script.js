@@ -84,6 +84,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // ============================================================
+  // CARD PREVIEW SLIDESHOW (Automatic cross-fade)
+  // ============================================================
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach(card => {
+    const slides = card.querySelectorAll('.project-card__slide');
+    if (slides.length <= 1) return;
+    
+    let slideIndex = 0;
+    setInterval(() => {
+      slides[slideIndex].classList.remove('active');
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add('active');
+    }, 3000); // Cycle every 3 seconds
+  });
+
+
+  // ============================================================
   // SKILL BARS — Animate on scroll
   // ============================================================
   const skillObserver = new IntersectionObserver((entries) => {
@@ -129,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
           heading: 'Mi Rol',
-          text: 'Desde mi rol como UX/UI Designer y diseñador de experiencia, participó en la conceptualización de la interacción, el diseño de la interfaz y la construcción del recorrido del usuario. Mi enfoque estuvo en definir cómo el visitante entiende, activa, explora y completa la experiencia de forma clara, intuitiva y memorable.'
+          text: 'Desde mi rol como UX/UI Designer y diseñador de experiencia, participó en la conceptualización de la interacción, el diseño de la interfaz y la construcción del recorrido del usuario. Mi enfoque estuvo en definir cómo el visitante entiende, activa, explora y completa la experiencia de forma clara, intuitiva and memorable.'
         },
         {
           heading: 'La Experiencia',
@@ -214,7 +231,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       ],
       gallery: [
-        { type: 'video', src: 'assets/VIDEO 4P 1.mp4', alt: 'Aplicativo de Registro — Video Demo' }
+        { type: 'image', src: 'assets/4P.jpeg', alt: 'Aplicativo de Registro — Portada principal' },
+        { type: 'video', src: 'assets/VIDEO 4P 1.mp4', alt: 'Aplicativo de Registro — Video de funcionamiento' }
       ],
       tags: ['UX/UI Design', 'Figma', 'Flutter', 'Captura de Datos', 'Validación de Campos', 'Experiencia de Marca', 'Desarrollo Frontend']
     }
@@ -232,9 +250,39 @@ document.addEventListener('DOMContentLoaded', function () {
     const dots = container.querySelectorAll('.modal__carousel-dot');
     const prevBtn = container.querySelector('.modal__carousel-btn--prev');
     const nextBtn = container.querySelector('.modal__carousel-btn--next');
+    const fullscreenBtn = container.querySelector('.modal__carousel-fullscreen-btn');
 
     slidesCount = slides.length;
     currentSlide = 0;
+
+    // Fullscreen toggling logic
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!document.fullscreenElement) {
+          container.requestFullscreen().catch(err => {
+            console.warn(`Error attempting to enable fullscreen: ${err.message}`);
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      });
+
+      // Update button text/icon when state changes
+      const handleFullscreenChange = () => {
+        if (document.fullscreenElement === container) {
+          fullscreenBtn.innerHTML = '✕';
+          fullscreenBtn.setAttribute('title', 'Salir de pantalla completa');
+        } else {
+          fullscreenBtn.innerHTML = '⛶';
+          fullscreenBtn.setAttribute('title', 'Pantalla completa');
+        }
+      };
+
+      document.addEventListener('fullscreenchange', handleFullscreenChange);
+      // Store reference on element for cleaning up later if needed
+      container._fullscreenHandler = handleFullscreenChange;
+    }
 
     if (slidesCount <= 1) return;
 
@@ -243,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Update active slides
       slides.forEach((slide, idx) => {
         slide.classList.toggle('active', idx === currentSlide);
-        // Pause videos on inactive slides
+        // Pause/play videos appropriately
         const video = slide.querySelector('video');
         if (video) {
           if (idx === currentSlide) {
@@ -317,6 +365,8 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="modal__carousel-track">
             ${slidesHTML}
           </div>
+          <!-- Fullscreen button -->
+          <button class="modal__carousel-fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">⛶</button>
           ${navHTML}
         </div>
       `;
@@ -351,14 +401,22 @@ document.addEventListener('DOMContentLoaded', function () {
     ).join('');
 
     modalBody.innerHTML = `
-      ${carouselHTML}
-      <span class="modal__category">${project.category}</span>
-      <h3 class="modal__title">${project.title}</h3>
-      ${buttonsHTML}
-      <div class="modal__details-content">
-        ${sectionsHTML}
+      <div class="modal__grid">
+        <!-- Left Column: Carousel -->
+        <div class="modal__left-col">
+          ${carouselHTML}
+        </div>
+        <!-- Right Column: Information -->
+        <div class="modal__right-col">
+          <span class="modal__category">${project.category}</span>
+          <h3 class="modal__title">${project.title}</h3>
+          ${buttonsHTML}
+          <div class="modal__details-content">
+            ${sectionsHTML}
+          </div>
+          <div class="modal__tags">${tagsHTML}</div>
+        </div>
       </div>
-      <div class="modal__tags">${tagsHTML}</div>
     `;
 
     modal.classList.add('is-open');
@@ -380,6 +438,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Pause any playing video in modal carousel
     const videos = modalBody.querySelectorAll('video');
     videos.forEach(v => v.pause());
+
+    const container = modalBody.querySelector('.modal__carousel-container');
+    if (container && container._fullscreenHandler) {
+      document.removeEventListener('fullscreenchange', container._fullscreenHandler);
+    }
 
     setTimeout(() => {
       modal.classList.remove('is-open');

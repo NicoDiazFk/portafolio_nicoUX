@@ -11,6 +11,10 @@
 }
 
 :root {
+  /* Fonts */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
   /* Background */
   --bg-base: #f0ecf9;
   --bg-gradient-1: #ede7fb;
@@ -68,7 +72,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg-base);
   background-image:
     radial-gradient(ellipse at 20% 50%, var(--bg-gradient-1) 0%, transparent 50%),
@@ -97,7 +101,7 @@ ul, ol { list-style: none; }
 
 /* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: var(--font-heading), var(--font-body), sans-serif;
   color: var(--text-heading);
   line-height: 1.25;
   font-weight: 700;
@@ -260,7 +264,7 @@ h4 { font-size: 1.15rem; }
   gap: 0.5rem;
   padding: 0.85rem 2rem;
   border-radius: 50px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-heading), sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   border: none;
@@ -329,7 +333,7 @@ h4 { font-size: 1.15rem; }
 }
 
 .header__logo {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-heading), sans-serif;
   font-weight: 700;
   font-size: 1.15rem;
   color: var(--text-heading);
@@ -393,7 +397,7 @@ h4 { font-size: 1.15rem; }
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-heading), sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--accent-primary);
@@ -549,8 +553,8 @@ h4 { font-size: 1.15rem; }
 }
 
 .hero__orb {
-  width: 340px;
-  height: 340px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
   background: linear-gradient(135deg,
     rgba(124, 92, 252, 0.12) 0%,
@@ -581,10 +585,11 @@ h4 { font-size: 1.15rem; }
   position: relative;
   z-index: 1;
   transition: transform var(--transition-base);
+  transform: scale(1.15);
 }
 
 .hero__orb:hover .hero__profile-img {
-  transform: scale(1.05);
+  transform: scale(1.2);
 }
 
 .hero__orb::before {
@@ -623,21 +628,29 @@ h4 { font-size: 1.15rem; }
 }
 
 .hero__float-card--1 {
-  top: 8%;
-  right: 5%;
+  top: 4%;
+  right: -2%;
   animation: float-card 6s ease-in-out infinite;
 }
 
 .hero__float-card--2 {
-  bottom: 15%;
-  left: 2%;
+  bottom: 12%;
+  left: -6%;
   animation: float-card 7s ease-in-out infinite 1s;
 }
 
 .hero__float-card--3 {
-  bottom: 5%;
-  right: 15%;
+  bottom: 2%;
+  right: 10%;
   animation: float-card 5.5s ease-in-out infinite 2s;
+}
+
+.hero__float-logo {
+  height: 20px;
+  width: 20px;
+  margin-right: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 @keyframes float-card {
@@ -682,7 +695,7 @@ h4 { font-size: 1.15rem; }
 }
 
 .about__title-compact {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-heading), sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
@@ -839,14 +852,29 @@ h4 { font-size: 1.15rem; }
   position: relative;
 }
 
-.project-card__image {
+.project-card__slides {
+  position: relative;
   width: 100%;
   height: 240px;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
 }
 
-.project-card:hover .project-card__image {
+.project-card__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card__slide.active {
+  opacity: 1;
+}
+
+.project-card:hover .project-card__slide {
   transform: scale(1.06);
 }
 
@@ -952,9 +980,9 @@ h4 { font-size: 1.15rem; }
 
 .modal__content {
   position: relative;
-  width: 100%;
-  max-width: 800px;
-  max-height: 90vh;
+  width: 98%;
+  max-width: 1400px;
+  max-height: 92vh;
   overflow-y: auto;
   padding: 3rem;
   transform: scale(0.95) translateY(20px);
@@ -964,6 +992,26 @@ h4 { font-size: 1.15rem; }
 
 .modal.is-visible .modal__content {
   transform: scale(1) translateY(0);
+}
+
+/* Modal Grid Layout */
+.modal__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 993px) {
+  .modal__grid {
+    grid-template-columns: 1.25fr 1fr;
+    gap: 3rem;
+  }
+
+  .modal__left-col {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .modal__close {
@@ -1041,13 +1089,13 @@ h4 { font-size: 1.15rem; }
 .modal__carousel-container {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 520px;
   border-radius: var(--glass-radius-sm);
   overflow: hidden;
   margin-bottom: 2rem;
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(30, 27, 75, 0.02);
 }
 
 .modal__carousel-track {
@@ -1065,13 +1113,13 @@ h4 { font-size: 1.15rem; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .modal__carousel-media {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -1147,6 +1195,68 @@ h4 { font-size: 1.15rem; }
   background: var(--accent-secondary);
   width: 18px;
   border-radius: 4px;
+}
+
+/* Modal Carousel Fullscreen Support */
+.modal__carousel-fullscreen-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 15;
+}
+
+.modal__carousel-fullscreen-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.modal__carousel-container:fullscreen {
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0;
+  border: none;
+  background: #000;
+}
+
+.modal__carousel-container:fullscreen .modal__carousel-slide {
+  background: #000;
+  height: 100vh;
+}
+
+.modal__carousel-container:fullscreen .modal__carousel-media {
+  object-fit: contain;
+}
+
+.modal__carousel-container:-webkit-full-screen {
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0;
+  border: none;
+  background: #000;
+}
+
+.modal__carousel-container:-webkit-full-screen .modal__carousel-slide {
+  background: #000;
+  height: 100vh;
+}
+
+.modal__carousel-container:-webkit-full-screen .modal__carousel-media {
+  object-fit: contain;
 }
 
 /* Modal Action Buttons (GitHub, Demo) */
@@ -1485,7 +1595,7 @@ h4 { font-size: 1.15rem; }
     grid-template-columns: 1fr;
   }
 
-  .project-card__image {
+  .project-card__slides {
     height: 200px;
   }
 
