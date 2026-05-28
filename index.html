@@ -75,7 +75,7 @@
                     </h1>
                     <p class="hero__title">Ingeniero Multimedia · Diseñador UX/UI</p>
                     <p class="hero__bio">
-                        Diseñador UX/UI en formación desde la Ingeniería Multimedia, con experiencia en diseño de interfaces, flujos de usuario y experiencias interactivas. Creo productos memorables y centrados en el usuario.
+                        Diseñador UX/UI en formación desde la Ingeniería Multimedia, con experiencia en diseño de interfaces, flujos de usuario y experiencias interactivas físico-digitales. He participado en proyectos culturales y en experiencias lúdicas para agencias de marketing, integrando diseño, tecnología e interacción para crear productos memorables centrados en el usuario.
                     </p>
                     <div class="hero__cta">
                         <a href="#contacto" class="btn btn--primary">Hablemos</a>
@@ -84,141 +84,111 @@
                 </div>
 
                 <!-- Right: Decorative Visual -->
-                <div class="hero__visual" aria-hidden="true">
-                    <div class="hero__orb"></div>
-                    <div class="hero__float-card hero__float-card--1">
+                <div class="hero__visual">
+                    <div class="hero__orb">
+                        <img src="assets/foto.png" alt="Nicolás Díaz Guerrero — Diseñador UX/UI" class="hero__profile-img">
+                    </div>
+                    <div class="hero__float-card hero__float-card--1" aria-hidden="true">
                         <span class="hero__float-icon">🎨</span> Figma & Design
                     </div>
-                    <div class="hero__float-card hero__float-card--2">
+                    <div class="hero__float-card hero__float-card--2" aria-hidden="true">
                         <span class="hero__float-icon">⚡</span> React & Flutter
                     </div>
-                    <div class="hero__float-card hero__float-card--3">
+                    <div class="hero__float-card hero__float-card--3" aria-hidden="true">
                         <span class="hero__float-icon">🎮</span> Unity & XR
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ======= ABOUT SECTION ======= -->
-        <section id="sobre-mi" class="section">
+        <!-- ======= ABOUT SECTION (COMPACT) ======= -->
+        <section id="sobre-mi" class="section section--compact">
             <div class="container">
                 <div class="about__panel glass reveal">
-                    <h2 class="text-center" style="margin-bottom: 2.5rem;">Sobre Mí</h2>
-                    <div class="about__grid">
-                        <!-- Photo -->
-                        <div>
-                            <div class="about__photo-frame glass">
-                                <div class="about__photo-placeholder">👨‍💻</div>
+                    <div class="about__grid about__grid--compact">
+                        <!-- Bio Col (Left) -->
+                        <div class="about__bio-col">
+                            <h3 class="about__title-compact">Nicolás Díaz Guerrero</h3>
+                            <p class="about__role-compact">Ingeniero Multimedia · Diseñador UX/UI</p>
+                            <p class="about__bio">
+                                Soy estudiante de Ingeniería Multimedia enfocado en UX/UI y diseño de experiencias interactivas. He trabajado en proyectos que combinan interfaz, narrativa, interacción y tecnología — desde experiencias digitales para el <strong>Museo Etnográfico y Arqueológico Lilí</strong> hasta propuestas lúdicas para agencias como <strong>4P Brands</strong> en Cali.
+                            </p>
+                            <p class="about__bio about__bio--secondary">
+                                Mi trabajo integra herramientas como Figma, Unity, Flutter, React y JavaScript para transformar ideas en prototipos, interfaces y productos digitales que conectan diseño, interacción y propósito.
+                            </p>
+                            <!-- Social links relocated here -->
+                            <div class="about__socials-row">
+                                <a href="https://www.linkedin.com/in/uxnico-diaz/" target="_blank" rel="noopener noreferrer" class="social-link social-link--sm">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <a href="https://github.com/NicoDiazFk" target="_blank" rel="noopener noreferrer" class="social-link social-link--sm">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                                    GitHub
+                                </a>
                             </div>
                         </div>
 
-                        <!-- Bio -->
-                        <div>
-                            <h3 class="about__name">Nicolás Díaz Guerrero</h3>
-                            <p class="about__role">Ingeniero Multimedia · Diseñador UX/UI</p>
-                            <p class="about__bio">
-                                Soy estudiante de Ingeniería Multimedia enfocado en UX/UI y diseño de experiencias interactivas. He trabajado en proyectos que combinan interfaz, narrativa, interacción y tecnología, como experiencias digitales para el <strong>Museo Etnográfico y Arqueológico Lilí</strong> y propuestas lúdicas interactivas para agencias de marketing en Cali como <strong>4P Brands</strong>.
-                            </p>
-                            <p class="about__bio mb-0">
-                                Mi trabajo se centra en diseñar experiencias claras, funcionales y atractivas, entendiendo al usuario como el punto de partida. Integro herramientas como Figma, Unity, Flutter, React y JavaScript para transformar ideas en prototipos, interfaces y productos digitales que conectan diseño, interacción y propósito.
-                            </p>
-
-                            <!-- Skills -->
-                            <div style="margin-top: 2.5rem;">
-                                <h4 class="skills__title">Habilidades</h4>
-                                <div class="skills__grid">
-                                    <div class="skill-bar glass--xs" data-skill="95">
-                                        <div class="skill-bar__header">
-                                            <span class="skill-bar__name">UX/UI Design</span>
-                                            <span class="skill-bar__value">95%</span>
-                                        </div>
-                                        <div class="skill-bar__track">
-                                            <div class="skill-bar__fill" style="--skill-width: 95%"></div>
-                                        </div>
+                        <!-- Skills Col (Right) -->
+                        <div class="about__skills-col">
+                            <div class="skills__mini-grid">
+                                <div class="skill-bar glass--xs" data-skill="95">
+                                    <div class="skill-bar__header">
+                                        <span class="skill-bar__name">UX/UI Design</span>
+                                        <span class="skill-bar__value">95%</span>
                                     </div>
-                                    <div class="skill-bar glass--xs" data-skill="95">
-                                        <div class="skill-bar__header">
-                                            <span class="skill-bar__name">Figma</span>
-                                            <span class="skill-bar__value">95%</span>
-                                        </div>
-                                        <div class="skill-bar__track">
-                                            <div class="skill-bar__fill" style="--skill-width: 95%"></div>
-                                        </div>
+                                    <div class="skill-bar__track"><div class="skill-bar__fill" style="--skill-width: 95%"></div></div>
+                                </div>
+                                <div class="skill-bar glass--xs" data-skill="95">
+                                    <div class="skill-bar__header">
+                                        <span class="skill-bar__name">Figma</span>
+                                        <span class="skill-bar__value">95%</span>
                                     </div>
-                                    <div class="skill-bar glass--xs" data-skill="90">
-                                        <div class="skill-bar__header">
-                                            <span class="skill-bar__name">Diseño de Interacción</span>
-                                            <span class="skill-bar__value">90%</span>
-                                        </div>
-                                        <div class="skill-bar__track">
-                                            <div class="skill-bar__fill" style="--skill-width: 90%"></div>
-                                        </div>
+                                    <div class="skill-bar__track"><div class="skill-bar__fill" style="--skill-width: 95%"></div></div>
+                                </div>
+                                <div class="skill-bar glass--xs" data-skill="90">
+                                    <div class="skill-bar__header">
+                                        <span class="skill-bar__name">Interacción</span>
+                                        <span class="skill-bar__value">90%</span>
                                     </div>
-                                    <div class="skill-bar glass--xs" data-skill="85">
-                                        <div class="skill-bar__header">
-                                            <span class="skill-bar__name">HTML / CSS / JS</span>
-                                            <span class="skill-bar__value">85%</span>
-                                        </div>
-                                        <div class="skill-bar__track">
-                                            <div class="skill-bar__fill" style="--skill-width: 85%"></div>
-                                        </div>
+                                    <div class="skill-bar__track"><div class="skill-bar__fill" style="--skill-width: 90%"></div></div>
+                                </div>
+                                <div class="skill-bar glass--xs" data-skill="85">
+                                    <div class="skill-bar__header">
+                                        <span class="skill-bar__name">HTML/CSS/JS</span>
+                                        <span class="skill-bar__value">85%</span>
                                     </div>
-                                    <div class="skill-bar glass--xs" data-skill="80">
-                                        <div class="skill-bar__header">
-                                            <span class="skill-bar__name">React / TypeScript</span>
-                                            <span class="skill-bar__value">80%</span>
-                                        </div>
-                                        <div class="skill-bar__track">
-                                            <div class="skill-bar__fill" style="--skill-width: 80%"></div>
-                                        </div>
+                                    <div class="skill-bar__track"><div class="skill-bar__fill" style="--skill-width: 85%"></div></div>
+                                </div>
+                                <div class="skill-bar glass--xs" data-skill="80">
+                                    <div class="skill-bar__header">
+                                        <span class="skill-bar__name">React / TS</span>
+                                        <span class="skill-bar__value">80%</span>
                                     </div>
-                                    <div class="skill-bar glass--xs" data-skill="75">
-                                        <div class="skill-bar__header">
-                                            <span class="skill-bar__name">Flutter</span>
-                                            <span class="skill-bar__value">75%</span>
-                                        </div>
-                                        <div class="skill-bar__track">
-                                            <div class="skill-bar__fill" style="--skill-width: 75%"></div>
-                                        </div>
+                                    <div class="skill-bar__track"><div class="skill-bar__fill" style="--skill-width: 80%"></div></div>
+                                </div>
+                                <div class="skill-bar glass--xs" data-skill="75">
+                                    <div class="skill-bar__header">
+                                        <span class="skill-bar__name">Flutter</span>
+                                        <span class="skill-bar__value">75%</span>
                                     </div>
-                                    <div class="skill-bar glass--xs" data-skill="75">
-                                        <div class="skill-bar__header">
-                                            <span class="skill-bar__name">Unity / XR</span>
-                                            <span class="skill-bar__value">75%</span>
-                                        </div>
-                                        <div class="skill-bar__track">
-                                            <div class="skill-bar__fill" style="--skill-width: 75%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="skill-bar glass--xs" data-skill="85">
-                                        <div class="skill-bar__header">
-                                            <span class="skill-bar__name">Comunicación Visual</span>
-                                            <span class="skill-bar__value">85%</span>
-                                        </div>
-                                        <div class="skill-bar__track">
-                                            <div class="skill-bar__fill" style="--skill-width: 85%"></div>
-                                        </div>
-                                    </div>
+                                    <div class="skill-bar__track"><div class="skill-bar__fill" style="--skill-width: 75%"></div></div>
                                 </div>
                             </div>
 
-                            <!-- Tools -->
-                            <div class="tools">
-                                <h4 class="tools__title">Herramientas & Tecnologías</h4>
-                                <div class="tools__grid">
-                                    <span class="tool-tag">Figma</span>
-                                    <span class="tool-tag">React</span>
-                                    <span class="tool-tag">Flutter</span>
-                                    <span class="tool-tag">Unity</span>
-                                    <span class="tool-tag">JavaScript</span>
-                                    <span class="tool-tag">TypeScript</span>
-                                    <span class="tool-tag">HTML5</span>
-                                    <span class="tool-tag">CSS3</span>
-                                    <span class="tool-tag">UX Research</span>
-                                    <span class="tool-tag">Prototipado</span>
-                                    <span class="tool-tag">Design Systems</span>
-                                    <span class="tool-tag">Motion Design</span>
-                                </div>
+                            <div class="tools__grid tools__grid--compact">
+                                <span class="tool-tag">Figma</span>
+                                <span class="tool-tag">React</span>
+                                <span class="tool-tag">Flutter</span>
+                                <span class="tool-tag">Unity</span>
+                                <span class="tool-tag">JavaScript</span>
+                                <span class="tool-tag">TypeScript</span>
+                                <span class="tool-tag">HTML5</span>
+                                <span class="tool-tag">CSS3</span>
+                                <span class="tool-tag">UX Research</span>
+                                <span class="tool-tag">Prototipado</span>
+                                <span class="tool-tag">Design Systems</span>
+                                <span class="tool-tag">Motion Design</span>
                             </div>
                         </div>
                     </div>
@@ -232,7 +202,7 @@
                 <div class="projects__header reveal">
                     <h2>Mis Proyectos</h2>
                     <p class="section-subtitle">
-                        Una selección de mi trabajo donde el diseño, la interacción y la tecnología se encuentran para crear experiencias memorables.
+                        Experiencias donde el diseño, la interacción y la tecnología se encuentran para crear productos memorables.
                     </p>
                 </div>
 
@@ -240,18 +210,16 @@
                     <!-- Lili Quest -->
                     <div class="project-card glass glass--interactive reveal reveal--delay-1" data-project="lili-quest">
                         <div class="project-card__image-wrapper">
-                            <img src="assets/lili-quest.png" alt="Lili Quest — Experiencia interactiva para el Museo Etnográfico y Arqueológico Lilí" class="project-card__image" onerror="this.style.background='linear-gradient(135deg, #7c5cfc22, #38bdf822)'; this.style.height='240px';">
+                            <img src="assets/lili1.png" alt="Lili Quest — Experiencia interactiva Museo Lilí" class="project-card__image">
                             <div class="project-card__overlay">
-                                <span class="project-card__overlay-text">
-                                    Ver Proyecto →
-                                </span>
+                                <span class="project-card__overlay-text">Ver Proyecto →</span>
                             </div>
                         </div>
                         <div class="project-card__body">
                             <span class="project-card__category">Experiencia Interactiva · UX/UI</span>
                             <h3 class="project-card__title">Lili Quest</h3>
                             <p class="project-card__desc">
-                                Experiencia interactiva para el Museo Etnográfico y Arqueológico Lilí. Diseño de interfaz, flujos de usuario e interacción física-digital para acercar a los visitantes al patrimonio cultural.
+                                Experiencia multimedia interactiva para el Museo Etnográfico y Arqueológico Lilí. Interfaz, narrativa, interacción física-digital y recursos lúdicos al servicio del patrimonio cultural.
                             </p>
                             <div class="project-card__tags">
                                 <span class="project-card__tag">UX Research</span>
@@ -265,24 +233,45 @@
                     <!-- Ubikasa -->
                     <div class="project-card glass glass--interactive reveal reveal--delay-2" data-project="ubikasa">
                         <div class="project-card__image-wrapper">
-                            <img src="assets/ubikasa.png" alt="Ubikasa — Plataforma de búsqueda inmobiliaria" class="project-card__image" onerror="this.style.background='linear-gradient(135deg, #38bdf822, #f472b622)'; this.style.height='240px';">
+                            <img src="assets/ubi1.png" alt="Ubikasa — Plataforma de arriendos" class="project-card__image">
                             <div class="project-card__overlay">
-                                <span class="project-card__overlay-text">
-                                    Ver Proyecto →
-                                </span>
+                                <span class="project-card__overlay-text">Ver Proyecto →</span>
                             </div>
                         </div>
                         <div class="project-card__body">
-                            <span class="project-card__category">Diseño UX/UI · App</span>
+                            <span class="project-card__category">Diseño UX/UI · Plataforma Web</span>
                             <h3 class="project-card__title">Ubikasa</h3>
                             <p class="project-card__desc">
-                                Diseño UX/UI de plataforma inmobiliaria. Investigación de usuario, arquitectura de información, prototipado de alta fidelidad y diseño de interfaz para una experiencia de búsqueda intuitiva.
+                                Diseño UX/UI de plataforma digital para gestión de arriendos y visitas a propiedades. Investigación de usuario, diseño de marca, flujos e interfaces centradas en la facilidad de uso.
                             </p>
                             <div class="project-card__tags">
                                 <span class="project-card__tag">UX Design</span>
-                                <span class="project-card__tag">Prototipado</span>
-                                <span class="project-card__tag">Figma</span>
                                 <span class="project-card__tag">UI Design</span>
+                                <span class="project-card__tag">Figma</span>
+                                <span class="project-card__tag">Microservicios</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4P Brands -->
+                    <div class="project-card glass glass--interactive reveal reveal--delay-3" data-project="4p-brands">
+                        <div class="project-card__image-wrapper">
+                            <video src="assets/VIDEO 4P 1.mp4" autoplay loop muted playsinline class="project-card__image"></video>
+                            <div class="project-card__overlay">
+                                <span class="project-card__overlay-text">Ver Proyecto →</span>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <span class="project-card__category">Diseño UX/UI · Desarrollo Flutter</span>
+                            <h3 class="project-card__title">Aplicativo de Registro</h3>
+                            <p class="project-card__desc">
+                                Diseño de experiencia e interfaz de usuario, y desarrollo en Flutter de un aplicativo orientado a optimizar la captura de datos en eventos y activaciones de marca de 4P Brands.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">UX/UI Design</span>
+                                <span class="project-card__tag">Figma</span>
+                                <span class="project-card__tag">Flutter</span>
+                                <span class="project-card__tag">Captura de Datos</span>
                             </div>
                         </div>
                     </div>
